@@ -1,97 +1,150 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:drakeet="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
-    android:padding="@dimen/activity_horizontal_margin"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:gravity="center"
-        android:layout_margin="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
 
-        <me.drakeet.library.UIButton
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="16dp"
-            drakeet:radius="6dp"
-            android:background="@mipmap/ic_launcher"/>
-
-        <TextView
+        <LinearLayout
+            android:gravity="center"
+            android:layout_margin="8dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/t1"/>
+            android:layout_height="wrap_content">
+
+            <me.drakeet.library.UIButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="16dp"
+                drakeet:radius="6dp"
+                android:background="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/t1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <me.drakeet.library.UIButton
+                android:layout_width="64dp"
+                android:layout_height="32dp"
+                android:layout_margin="16dp"
+                drakeet:alpha_pressed="40"
+                drakeet:color_pressed="#0303ff"
+                android:text="UIButton"
+                android:textSize="10sp"
+                android:background="@android:color/transparent" />
+            <!--drakeet:radius="2dp" is default-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/t0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <me.drakeet.library.UIButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="16dp"
+                drakeet:shape_type="round"
+                android:background="@mipmap/avatar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/t2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <me.drakeet.library.UIImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="16dp"
+                drakeet:shape_type="round"
+                android:src="@mipmap/avatar2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/t3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <me.drakeet.library.UIRippleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UIRippleButton"
+                drakeet:ripple_color="#ffeeeeee"
+                drakeet:ripple_duration="500"
+                drakeet:shape_type="rectangle"
+                drakeet:radius="10dp"
+                drakeet:color_unpressed="#fff44336" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/t4" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <me.drakeet.library.UIRippleButton
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:text="Circle UIRippleButton"
+                android:textSize="9sp"
+                drakeet:ripple_color="#ffeeeeee"
+                drakeet:ripple_duration="500"
+                drakeet:shape_type="circle"
+                drakeet:color_unpressed="#fff44336" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/t5" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:gravity="center"
-        android:layout_margin="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <me.drakeet.library.UIButton
-            android:layout_width="64dp"
-            android:layout_height="32dp"
-            android:layout_margin="16dp"
-            drakeet:alpha_pressed="40"
-            drakeet:color_pressed="#0303ff"
-            android:text="UIButton"
-            android:textSize="10sp"
-            android:background="@android:color/transparent"/>
-        <!--drakeet:radius="2dp" is default-->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/t0"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:gravity="center"
-        android:layout_margin="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <me.drakeet.library.UIButton
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="16dp"
-            drakeet:shape_type="round"
-            android:background="@mipmap/avatar"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/t2"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:gravity="center"
-        android:layout_margin="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <me.drakeet.library.UIImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="16dp"
-            drakeet:shape_type="round"
-            android:src="@mipmap/avatar2"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/t3"/>
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</ScrollView>
