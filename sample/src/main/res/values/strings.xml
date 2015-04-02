@@ -3,8 +3,17 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="t5">UIRippleButton\ndrakeet:shape_type=\"circle\"\ndrakeet:ripple_color="#ffeeeeee"\ndrakeet:ripple_duration="500"</string>
-    <string name="t4">UIRippleButton\ndrakeet:shape_type=\"rectangle\"\ndrakeet:radius="10dp"\ndrakeet:ripple_color="#ffeeeeee"\ndrakeet:ripple_duration="500"</string>
+    <string name="t5">UIRippleButton
+                drakeet:ripple_color=\"#eeeeee\"
+                drakeet:ripple_duration=\"500\"
+                drakeet:shape_type=\"round\"
+                drakeet:color_unpressed=\"#f44336\"
+    </string>
+    <string name="t4">UIRippleButton
+                drakeet:ripple_color=\"#8a87ee\"
+                drakeet:ripple_duration=\"500\"
+                drakeet:shape_type=\"rectangle\"
+                drakeet:color_unpressed=\"#f44336\"</string>
     <string name="t3">UIImageView\ndrakeet:shape_type=\"round\"</string>
     <string name="t2">UIButton\ndrakeet:shape_type=\"round\"</string>
     <string name="t1">UIButton\ndrakeet:radius=\"6dp\"</string>

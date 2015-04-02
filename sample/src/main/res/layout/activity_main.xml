@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/activity_horizontal_margin"
+        android:padding="12dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -109,10 +109,10 @@
                 android:text="Ripple"
                 android:textSize="10sp"
                 android:layout_margin="16dp"
-                drakeet:ripple_color="#ffeeeeee"
+                drakeet:ripple_color="#8a87ee"
                 drakeet:ripple_duration="500"
                 drakeet:shape_type="rectangle"
-                drakeet:color_unpressed="#fff44336" />
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -133,10 +133,10 @@
                 android:text="Circle UIRippleButton"
                 android:textSize="9sp"
                 android:layout_margin="16dp"
-                drakeet:ripple_color="#ffeeeeee"
+                drakeet:ripple_color="#eeeeee"
                 drakeet:ripple_duration="500"
                 drakeet:shape_type="round"
-                drakeet:color_unpressed="#fff44336" />
+                drakeet:color_unpressed="#f44336" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -3,6 +3,7 @@ package me.drakeet.library;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
@@ -47,7 +48,7 @@ public class UIRippleButton extends Button {
     };
 
     private int mRippleAlpha;
-    private final static int HALF_ALPHA = 127;
+    //private final static int HALF_ALPHA = 127;
     private final static int RIPPLR_ALPHE = 47;
     private final static int MSG_DRAW_COMPLETE = 101;
 
@@ -70,14 +71,18 @@ public class UIRippleButton extends Button {
             return;
         }
         final TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.UIButton);
-        mUnPressedColor = typedArray.getColor(R.styleable.UIButton_color_unpressed,
-                getResources().getColor(R.color.color_unpressed));
-        mRippleColor = typedArray.getColor(R.styleable.UIButton_ripple_color,
-                getResources().getColor(R.color.ripple_color));
-        mRippleAlpha = typedArray.getInteger(R.styleable.UIButton_ripple_alpha,
-                RIPPLR_ALPHE);
-        mRippleDuration = typedArray.getInteger(R.styleable.UIButton_ripple_duration,
-                1000);
+        mUnPressedColor = typedArray.getColor(
+                R.styleable.UIButton_color_unpressed, getResources().getColor(R.color.transparent)
+        );
+        mRippleColor = typedArray.getColor(
+                R.styleable.UIButton_ripple_color, getResources().getColor(R.color.ripple_color)
+        );
+        mRippleAlpha = typedArray.getInteger(
+                R.styleable.UIButton_ripple_alpha, RIPPLR_ALPHE
+        );
+        mRippleDuration = typedArray.getInteger(
+                R.styleable.UIButton_ripple_duration, 1000
+        );
         mShapeType = typedArray.getInt(R.styleable.UIButton_shape_type, 1);
         mRoundRadius = typedArray.getDimensionPixelSize(R.styleable.UIButton_radius,
                 getResources().getDimensionPixelSize(R.dimen.ui_radius));
@@ -95,6 +100,7 @@ public class UIRippleButton extends Button {
         this.setDrawingCacheEnabled(true);
         this.setClickable(true);
         this.setBackgroundColor(getResources().getColor(R.color.transparent));
+        mPaint.setAlpha(Color.alpha(mUnPressedColor));
         mPath = new Path();
         mRectF = new RectF();
         pointY = pointX = -1;
@@ -110,17 +116,16 @@ public class UIRippleButton extends Button {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
         if (mPaint == null){
             return;
         }
-        mPaint.setAlpha(HALF_ALPHA);
         if (mShapeType == 0){// draw round button
             canvas.drawCircle(mWidth / 2, mHeight / 2, mBtnRadius, mPaint);
         }else{// draw rectangle button
             mRectF.set(0, 0, mWidth, mHeight);
             canvas.drawRoundRect(mRectF, mRoundRadius, mRoundRadius, mPaint);
         }
+        super.onDraw(canvas);
         drawFillCircle(canvas);
     }
 
