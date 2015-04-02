@@ -115,7 +115,7 @@ public class UIRippleButton extends Button {
             return;
         }
         mPaint.setAlpha(HALF_ALPHA);
-        if (mShapeType == 2){// draw cirle button
+        if (mShapeType == 0){// draw round button
             canvas.drawCircle(mWidth / 2, mHeight / 2, mBtnRadius, mPaint);
         }else{// draw rectangle button
             mRectF.set(0, 0, mWidth, mHeight);
@@ -153,7 +153,7 @@ public class UIRippleButton extends Button {
 //            canvas.translate(0, 0);//保持原点
             mPath.reset();
             canvas.clipPath(mPath);
-            if (mShapeType == 2){
+            if (mShapeType == 0){
                 mPath.addCircle(rbX / 2, rbY / 2, mBtnRadius, Path.Direction.CCW);
             }else {
                 mPath.addRoundRect(mRectF, mRoundRadius, mRoundRadius, Path.Direction.CCW);

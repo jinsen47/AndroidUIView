@@ -8,6 +8,8 @@ Hope you will like it :)
 
 `UIImageView` A view extends ImageView, like as UIButton in iOS.
 
+`UIRippleButton` A view fork from [traex/RippleEffect](https://github.com/traex/RippleEffect), add and contribute by [whilu](https://github.com/whilu)
+
 
 ## Screenshots
 
@@ -82,7 +84,11 @@ You can change several attributes in the XML file:
 * drakeet:shape_type [enum (rectangle, round) def:rectangle] --> Rectangle or round of cover shape
 * drakeet:radius [dimension def:2dp] --> Add a radius to the cover
 
+## THANKS
+
+
 ## BUG
+If set a seletor.xml to background, it may perform perfectly...
 
 ## DEMO
 [apk](/sample/sample-release.apk)
