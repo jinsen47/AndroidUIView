@@ -45,6 +45,7 @@
                 android:layout_margin="16dp"
                 drakeet:alpha_pressed="40"
                 drakeet:color_pressed="#0303ff"
+                drakeet:color_unpressed="#8aacee"
                 android:text="UIButton"
                 android:textSize="10sp"
                 android:background="@android:color/transparent" />
@@ -111,8 +112,7 @@
                 android:layout_margin="16dp"
                 drakeet:ripple_color="#8a87ee"
                 drakeet:ripple_duration="500"
-                drakeet:shape_type="rectangle"
-                />
+                drakeet:shape_type="rectangle"/>
 
             <TextView
                 android:layout_width="wrap_content"

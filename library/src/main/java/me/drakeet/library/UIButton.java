@@ -23,11 +23,14 @@
  */
 package me.drakeet.library;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.Button;
@@ -39,10 +42,11 @@ public class UIButton extends Button {
 
     private int WIDTH;
     private int HEIGHT;
-    private int PAINT_ALPHA = 48;
+    private int COVER_ALPHA = 48;
 
     private int mPressedColor;
     private Paint mPaint;
+    private Paint mBackgroundPaint;
     private int mShapeType;
     private int mRadius;
 
@@ -60,21 +64,34 @@ public class UIButton extends Button {
         init(context, attrs);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public UIButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        init(context, attrs);
+    }
+
     private void init(final Context context, final AttributeSet attrs) {
         if (isInEditMode())
             return;
         final TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.UIButton);
         mPressedColor = typedArray.getColor(R.styleable.UIButton_color_pressed, getResources().getColor(R.color.color_pressed));
-        PAINT_ALPHA = typedArray.getInteger(R.styleable.UIButton_alpha_pressed, PAINT_ALPHA);
+        COVER_ALPHA = typedArray.getInteger(R.styleable.UIButton_alpha_pressed, COVER_ALPHA);
         mShapeType = typedArray.getInt(R.styleable.UIButton_shape_type, 1);
         mRadius = typedArray.getDimensionPixelSize(R.styleable.UIButton_radius, getResources().getDimensionPixelSize(R.dimen.ui_radius));
+        int unpressedColor = typedArray.getColor(R.styleable.UIButton_color_unpressed, getResources().getColor(R.color.transparent));
         typedArray.recycle();
+
         mPaint = new Paint();
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(mPressedColor);
-        this.setWillNotDraw(false);
         mPaint.setAlpha(0);
         mPaint.setAntiAlias(true);
+
+        mBackgroundPaint = new Paint(mPaint);
+        mBackgroundPaint.setAlpha(Color.alpha(unpressedColor));
+        mBackgroundPaint.setColor(unpressedColor);
+
+        this.setWillNotDraw(false);
         this.setDrawingCacheEnabled(true);
         this.setClickable(true);
     }
@@ -88,8 +105,18 @@ public class UIButton extends Button {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        if (mPaint == null || mBackgroundPaint == null) {
+            super.onDraw(canvas);
+            return;
+        }
+        if (mShapeType == 0){
+            canvas.drawCircle(WIDTH/2, HEIGHT/2, WIDTH/2, mBackgroundPaint);
+        }else{
+            RectF rectF = new RectF();
+            rectF.set(0, 0, WIDTH, HEIGHT);
+            canvas.drawRoundRect(rectF, mRadius, mRadius, mBackgroundPaint);
+        }
         super.onDraw(canvas);
-        if (mPaint == null) return;
         if (mShapeType == 0) {
             canvas.drawCircle(WIDTH/2, HEIGHT/2, WIDTH/2.1038f, mPaint);
         } else {
@@ -103,9 +130,10 @@ public class UIButton extends Button {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                mPaint.setAlpha(PAINT_ALPHA);
+                mPaint.setAlpha(COVER_ALPHA);
                 invalidate();
                 break;
+            case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 mPaint.setAlpha(0);
                 invalidate();

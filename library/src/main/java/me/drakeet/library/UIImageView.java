@@ -106,6 +106,7 @@ public class UIImageView extends ImageView {
                 mPaint.setAlpha(PAINT_ALPHA);
                 invalidate();
                 break;
+            case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 mPaint.setAlpha(0);
                 invalidate();

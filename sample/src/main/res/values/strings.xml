@@ -17,5 +17,5 @@
     <string name="t3">UIImageView\ndrakeet:shape_type=\"round\"</string>
     <string name="t2">UIButton\ndrakeet:shape_type=\"round\"</string>
     <string name="t1">UIButton\ndrakeet:radius=\"6dp\"</string>
-    <string name="t0">UIButton\ndrakeet:alpha_pressed=\"40\"\ndrakeet:color_pressed=\"#0303ff\"</string>
+    <string name="t0">UIButton\ndrakeet:alpha_pressed=\"40\"\ndrakeet:color_pressed=\"#0303ff\"\ndrakeet:color_unpressed=\"#8aacee\"</string>
 </resources>

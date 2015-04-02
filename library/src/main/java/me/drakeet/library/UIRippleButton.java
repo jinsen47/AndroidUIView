@@ -117,6 +117,7 @@ public class UIRippleButton extends Button {
     @Override
     protected void onDraw(Canvas canvas) {
         if (mPaint == null){
+            super.onDraw(canvas);
             return;
         }
         if (mShapeType == 0){// draw round button
