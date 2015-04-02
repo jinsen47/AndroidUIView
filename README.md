@@ -8,7 +8,7 @@ Hope you will like it :)
 
 `UIImageView` A view extends ImageView, like as UIButton in iOS.
 
-`UIRippleButton` A view fork from [traex/RippleEffect](https://github.com/traex/RippleEffect), add and contribute by [whilu](https://github.com/whilu)
+`UIRippleButton` A view fork from [traex/RippleEffect](https://github.com/traex/RippleEffect), be added and contributed by [whilu](https://github.com/whilu)
 
 
 ## Screenshots
