@@ -1,4 +1,4 @@
-# AndroidUIView v1.0
+# AndroidUIView v1.1.0
 
 It's a very simple custom views library according UIButton in iOS, all of the views can be automatically set a pressed effect to a button with a simple background image without writing a selector.xml
 
@@ -23,7 +23,7 @@ Hope you will like it :)
 ####Gradle & Maven
 ```groovy
 dependencies {
-    compile 'me.drakeet.library:androiduiview:1.0.0'
+    compile 'me.drakeet.library:androiduiview:1.1.0'
 }
 ```
 
@@ -31,7 +31,7 @@ dependencies {
 <dependency>
     <groupId>me.drakeet.library</groupId>
     <artifactId>androiduiview</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
