@@ -13,7 +13,9 @@ Hope you will like it :)
 
 ## Screenshots
 
-<img src="/screenshots/s1.png" alt="screenshot" title="screenshot" width="270" height="486" /><img src="/screenshots/s2.png" alt="screenshot" title="screenshot" width="270" height="486" />
+<img src="/screenshots/s1.png" alt="screenshot" title="screenshot" width="270" height="486" />
+<img src="/screenshots/s2.png" alt="screenshot" title="screenshot" width="270" height="486" />
+<img src="/screenshots/s3.png" alt="screenshot" title="screenshot" width="270" height="486" />
 
 
 ## Usage

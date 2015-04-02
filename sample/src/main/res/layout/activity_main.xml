@@ -110,7 +110,8 @@
                 android:text="Ripple"
                 android:textSize="10sp"
                 android:layout_margin="16dp"
-                drakeet:ripple_color="#8a87ee"
+                drakeet:ripple_color="#ffffff"
+                drakeet:color_unpressed="#8aacee"
                 drakeet:ripple_duration="500"
                 drakeet:shape_type="rectangle"/>
 
