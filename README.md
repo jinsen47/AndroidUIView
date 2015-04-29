@@ -1,4 +1,4 @@
-# AndroidUIView v1.0
+# AndroidUIView v1.1.0
 
 It's a very simple custom views library according UIButton in iOS, all of the views can be automatically set a pressed effect to a button with a simple background image without writing a selector.xml
 
@@ -8,10 +8,14 @@ Hope you will like it :)
 
 `UIImageView` A view extends ImageView, like as UIButton in iOS.
 
+`UIRippleButton` A view fork from [traex/RippleEffect](https://github.com/traex/RippleEffect), be added and contributed by [whilu](https://github.com/whilu)
+
 
 ## Screenshots
 
-<img src="/screenshots/s1.png" alt="screenshot" title="screenshot" width="270" height="486" /><img src="/screenshots/s2.png" alt="screenshot" title="screenshot" width="270" height="486" />
+<img src="/screenshots/s1.png" alt="screenshot" title="screenshot" width="270" height="486" />
+<img src="/screenshots/s2.png" alt="screenshot" title="screenshot" width="270" height="486" />
+<img src="/screenshots/s3.png" alt="screenshot" title="screenshot" width="270" height="486" />
 
 
 ## Usage
@@ -19,7 +23,7 @@ Hope you will like it :)
 ####Gradle & Maven
 ```groovy
 dependencies {
-    compile 'me.drakeet.library:androiduiview:1.0.0'
+    compile 'me.drakeet.library:androiduiview:1.1.0'
 }
 ```
 
@@ -27,7 +31,7 @@ dependencies {
 <dependency>
     <groupId>me.drakeet.library</groupId>
     <artifactId>androiduiview</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
@@ -77,12 +81,16 @@ all right,
 
 You can change several attributes in the XML file:
 
-* drakeet:alpha_pressed [integer def:48 0-255] --> Alpha of the cover color when pressed
-* drakeet:color_pressed [color def:#9c000000] --> Color of the cover when pressed
-* drakeet:shape_type [enum (rectangle, round) def:rectangle] --> Rectangle or round of cover shape
-* drakeet:radius [dimension def:2dp] --> Add a radius to the cover
+* `drakeet:alpha_pressed` [integer def:48 0-255] --> Alpha of the cover color when pressed
+* `drakeet:color_pressed` [color def:#9c000000] --> Color of the cover when pressed
+* `drakeet:shape_type` [enum (rectangle, round) def:rectangle] --> Rectangle or round of cover or background view shape
+* `drakeet:radius` [dimension def:2dp] --> Add a radius to the cover
+
+## THANKS
+
 
 ## BUG
+If set a selector.xml to background, it may perform perfectly...
 
 ## DEMO
 [apk](/sample/sample-release.apk)
